@@ -571,6 +571,8 @@ public final class SystemServer {
         boolean disableTextServices = SystemProperties.getBoolean("config.disable_textservices", false);
         boolean disableSamplingProfiler = SystemProperties.getBoolean("config.disable_samplingprof",
                 false);
+        boolean disableVrManager = SystemProperties.getBoolean("config.disable_vrmanager", false);
+
         boolean isEmulator = SystemProperties.get("ro.kernel.qemu").equals("1");
         boolean enableWigig = SystemProperties.getBoolean("persist.wigig.enable", false);
 
@@ -642,9 +644,11 @@ public final class SystemServer {
             ServiceManager.addService(Context.INPUT_SERVICE, inputManager);
             Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
 
-            traceBeginAndSlog("StartVrManagerService");
-            mSystemServiceManager.startService(VrManagerService.class);
-            Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
+            if (!disableVrManager) {
+                traceBeginAndSlog("StartVrManagerService");
+                mSystemServiceManager.startService(VrManagerService.class);
+                Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
+            }
 
             mActivityManagerService.setWindowManager(wm);
 
