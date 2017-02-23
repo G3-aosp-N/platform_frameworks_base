@@ -17,9 +17,7 @@ LOCAL_PATH := frameworks/base/data/sounds/
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/alarms/Argon.ogg:system/media/audio/alarms/Argon.ogg \
     $(LOCAL_PATH)material/alarms/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
-    $(LOCAL_PATH)material/alarms/Drip.ogg:system/media/audio/alarms/Drip.ogg \
     $(LOCAL_PATH)material/alarms/Flow.ogg:system/media/audio/alarms/Flow.ogg \
-    $(LOCAL_PATH)material/alarms/Gallop.ogg:system/media/audio/alarms/Gallop.ogg \
     $(LOCAL_PATH)material/alarms/Helium.ogg:system/media/audio/alarms/Helium.ogg \
     $(LOCAL_PATH)material/alarms/Krypton.ogg:system/media/audio/alarms/Krypton.ogg \
     $(LOCAL_PATH)material/alarms/Neon.ogg:system/media/audio/alarms/Neon.ogg \
