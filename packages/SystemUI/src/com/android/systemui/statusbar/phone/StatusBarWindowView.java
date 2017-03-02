@@ -106,13 +106,10 @@ public class StatusBarWindowView extends FrameLayout {
         setMotionEventSplittingEnabled(false);
         mTransparentSrcPaint.setColor(0);
         mTransparentSrcPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
-<<<<<<< HEAD
         mFalsingManager = FalsingManager.getInstance(context);
-=======
         mStatusBarHeaderHeight = context
                 .getResources().getDimensionPixelSize(R.dimen.status_bar_header_height);
         mSettingsObserver = new SettingsObserver(mHandler);
->>>>>>> c5f84b6... SystemUI: double tap status bar to sleep (1/2)
     }
 
     @Override
@@ -205,8 +202,6 @@ public class StatusBarWindowView extends FrameLayout {
     protected void onAttachedToWindow () {
         super.onAttachedToWindow();
 
-<<<<<<< HEAD
-=======
         mSettingsObserver.observe();
         mDoubleTapGesture = new GestureDetector(mContext, new GestureDetector.SimpleOnGestureListener() {
             @Override
@@ -222,14 +217,6 @@ public class StatusBarWindowView extends FrameLayout {
             }
         });
 
-        // We really need to be able to animate while window animations are going on
-        // so that activities may be started asynchronously from panel animations
-        final ViewRootImpl root = getViewRootImpl();
-        if (root != null) {
-            root.setDrawDuringWindowsAnimating(true);
-        }
-
->>>>>>> c5f84b6... SystemUI: double tap status bar to sleep (1/2)
         // We need to ensure that our window doesn't suffer from overdraw which would normally
         // occur if our window is translucent. Since we are drawing the whole window anyway with
         // the scrim, we don't need the window to be cleared in the beginning.
@@ -415,7 +402,6 @@ public class StatusBarWindowView extends FrameLayout {
         }
     }
 
-<<<<<<< HEAD
     @Override
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback,
             int type) {
@@ -751,7 +737,6 @@ public class StatusBarWindowView extends FrameLayout {
         }
     };
 
-=======
     class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
             super(handler);
@@ -785,6 +770,5 @@ public class StatusBarWindowView extends FrameLayout {
                     resolver, Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 1) == 1;
         }
     }
->>>>>>> c5f84b6... SystemUI: double tap status bar to sleep (1/2)
 }
 
