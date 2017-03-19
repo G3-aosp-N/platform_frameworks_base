@@ -19,6 +19,10 @@
     <color name="accent_material_blue_200">#ff448aff</color>
     <color name="accent_material_indigo_100">#ff8c9eff</color>
 
+    <!-- Status bar battery colors -->
+    <color name="status_bar_battery_level_text_color">#ffffff</color>
+    <color name="batterymeter_frame_color_darkintensity">@color/dark_mode_icon_color_dual_tone_background</color>
+
     <!-- OPA home dimens -->
     <dimen name="halo_inner_radius">10.0dip</dimen>
     <dimen name="halo_thickness">1.0dip</dimen>
