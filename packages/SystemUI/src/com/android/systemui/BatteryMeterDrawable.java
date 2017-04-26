@@ -178,8 +178,6 @@ public class BatteryMeterDrawable extends Drawable implements
                 context.getColor(R.color.light_mode_icon_color_dual_tone_background);
         mLightModeFillColor = context.getColor(R.color.light_mode_icon_color_dual_tone_fill);
 
-        mDarkModeBatteryMeterFrameColor =
-                context.getColor(R.color.batterymeter_frame_color_darkintensity);
         mLightModeBatteryMeterFrameColor =
                 context.getColor(R.color.batterymeter_frame_color);
 
